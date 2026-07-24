@@ -24,9 +24,6 @@ export function getPathWithoutLocale(pathname: string): string {
 
 export function getLocalizedPath(path: string, locale: Locale): string {
   const cleanPath = getPathWithoutLocale(path);
-  if (locale === defaultLocale) {
-    return cleanPath;
-  }
   return `/${locale}${cleanPath}`;
 }
 
