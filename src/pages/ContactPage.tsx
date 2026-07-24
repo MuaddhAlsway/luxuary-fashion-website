@@ -56,21 +56,10 @@ export default function ContactPage() {
   return (
     <main ref={pageRef}>
       {/* Hero */}
-      <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundColor: "var(--color-secondary)",
-            backgroundImage:
-              "url(https://images.unsplash.com/photo-1541643600914-78b084683601?w=1920&h=1080&fit=crop&q=80)",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        />
-        <div
-          className="absolute inset-0"
-          style={{ backgroundColor: "rgba(168,161,147,0.4)" }}
-        />
+      <section
+        className="relative h-[50vh] flex items-center justify-center overflow-hidden"
+        style={{ backgroundColor: "var(--color-bg)" }}
+      >
         <div className="relative z-10 text-center px-6">
           <p
             className="text-label mb-6 tracking-[0.4em]"
