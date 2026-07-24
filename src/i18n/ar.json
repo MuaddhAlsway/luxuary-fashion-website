@@ -1,0 +1,118 @@
+{
+  "nav": {
+    "collection": "المجموعة",
+    "about": "عن Maison",
+    "atelier": "الورشة",
+    "contact": "اتصل بنا"
+  },
+  "hero": {
+    "establish": "تأسست في غراس، ١٩٨٧",
+    "title1": "فن",
+    "title2": "العطر",
+    "title3": "",
+    "title4": "",
+    "subtitle": "مصممة لمن يجمع الذكريات، لا العطور.",
+    "cta": "اكتشف المجموعة",
+    "scroll": "اسحب"
+  },
+  "collection": {
+    "label": "المجموعة",
+    "title": "عطور مميزة",
+    "viewAll": "عرض الكل"
+  },
+  "experience": {
+    "label": "التجربة المميزة",
+    "title": "طقوس للتحوّل",
+    "description1": "العطر لا يُوضع ببساطة — إنه طقس. كل صباح، مع تغيّر الضوء، تكشف تركيباتنا عن جوانب جديدة من شخصيتك. المقدّمات ترحّب بالعالم؛ القلب يعرّف شخصيّتك؛ والقاعدة تبقى كتوقيعك.",
+    "description2": "كل زجاجة من Maison مصممة لتكون جزءًا من طقوسك اليومية — كائنٌ من الجمال يرتقي بالمألوف إلى ما هو استثنائي.",
+    "cta": "استكشف الطقس"
+  },
+  "ingredients": {
+    "label": "المواد الخام",
+    "title:": "مكونات نبيلة",
+    "title": "مكونات نبيلة",
+    "origin": "المنشأ",
+    "olfactory": "البُعد العطري"
+  },
+  "featured": {
+    "label": "مميز",
+    "price": "السعر",
+    "volume": "الحجم",
+    "cta": "اكتشف"
+  },
+  "testimonials": {
+    "label": "الصحافة والثناء",
+    "title": "أصوات"
+  },
+  "about": {
+    "heroLabel": "قصتنا",
+    "heroTitle": "فن العطر",
+    "heroSub": "منذ عام ١٩٨٧، نسعى لتحقيق المستحيل — أن نُعبّر عن العاطفة في زجاجة.",
+    "cta": "احجز استشارة",
+    "visitUs": "زورونا",
+    "atelierTitle": "الورشة تنتظركم"
+  },
+  "product": {
+    "topNotes": "المقدّمات",
+    "heartNotes": "القلب",
+    "baseNotes": "القاعدة",
+    "addCollection": "أضف إلى المجموعة",
+    "olfactoryPyramid": "الهرم العطري",
+    "fragranceNotes": "ملاحظات العطر",
+    "rawMaterials": "المواد الخام",
+    "ingredientOrigins": "منشأ المكونات",
+    "madeByHand": "صناعة يدوية",
+    "craftedDevotion": "مصنوع بتفانٍ",
+    "craftDesc": "كل زجاجة تُجمَّع يدويًا في ورشتنا في غراس على يد حرفيين ماهرين ذوي عقود من الخبرة.",
+    "watchFilm": "شاهد الفيلم",
+    "notFound": "العطر غير موجود",
+    "returnCollection": "العودة إلى المجموعة"
+  },
+  "collectionPage": {
+    "allFragrances": "جميع العطور"
+  },
+  "contact": {
+    "label": "تواصلوا معنا",
+    "title": "اتصل بنا",
+    "subtitle": "نرحب بكم لتجربة Maison شخصيًا. الاستشارات الخاصة متاحة بموعد مسبق.",
+    "name": "الاسم",
+    "namePlaceholder": "اسمك الكامل",
+    "email": "البريد الإلكتروني",
+    "emailPlaceholder": "your@email.com",
+    "subject": "الموضوع",
+    "subjectPlaceholder": "اختر نوع الاستفسار",
+    "optConsultation": "استشارة خاصة",
+    "optBespoke": "عطر مخصص",
+    "optGift": "خدمة الهدايا",
+    "optPress": "استفسار صحفي",
+    "optOther": "أخرى",
+    "message": "الرسالة",
+    "messagePlaceholder": "أخبرنا كيف يمكننا مساعدتك...",
+    "send": "إرسال الرسالة",
+    "visitTitle": "زوروا الورشة",
+    "address1": "24 شارع بارفومري",
+    "address2": "06130 غراس، فرنسا",
+    "hoursTitle": "ساعات العمل",
+    "hoursWeekday": "الإثنين – الجمعة: 10:00 – 18:00",
+    "hoursWeekend": "السبت: بموعد مسبق فقط",
+    "reachTitle": "تواصلوا معنا",
+    "phone": "+33 4 93 36 44 00",
+    "emailAddress": "atelier@maison.com"
+  },
+  "footer": {
+    "desc": "فن العطر، مُرتقي بتجربة لا تُنسى. مصممة لمن يجمع الذكريات، لا العطور.",
+    "maison": "Maison",
+    "collection": "المجموعة",
+    "experience": "التجربة",
+    "ourStory": "قصتنا",
+    "theAtelier": "الورشة",
+    "sustainability": "الاستدامة",
+    "allFragrances": "جميع العطور",
+    "oudCollection": "مجموعة العود",
+    "limitedEdition": "إصدار محدود",
+    "privateConsultation": "استشارة خاصة",
+    "giftService": "خدمة الهدايا",
+    "bespokeFragrance": "عطر مخصص",
+    "rights": "جميع الحقوق محفوظة."
+  }
+}

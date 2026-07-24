@@ -1,0 +1,117 @@
+{
+  "nav": {
+    "collection": "Collection",
+    "about": "About",
+    "atelier": "Atelier",
+    "contact": "Contact"
+  },
+  "hero": {
+    "established": "Established in Grasse, 1987",
+    "title1": "THE",
+    "title2": "ART",
+    "title3": "OF",
+    "title4": "SCENT",
+    "subtitle": "Crafted for those who collect memories, not fragrances.",
+    "cta": "Discover Collection",
+    "scroll": "Scroll"
+  },
+  "collection": {
+    "label": "The Collection",
+    "title": "Signature Fragrances",
+    "viewAll": "View All"
+  },
+  "experience": {
+    "label": "The Signature Experience",
+    "title": "A Ritual of Becoming",
+    "description1": "Fragrance is not merely applied — it is a ritual. Each morning, as the light shifts, our compositions reveal new facets of your personality. The opening notes greet the world; the heart notes define your character; the base notes linger as your signature.",
+    "description2": "Every bottle from Maison is designed to become part of your daily ceremony — an object of beauty that elevates the ordinary into the extraordinary.",
+    "cta": "Explore the Ritual"
+  },
+  "ingredients": {
+    "label": "The Raw Materials",
+    "title": "Noble Ingredients",
+    "origin": "Origin",
+    "olfactory": "Olfactory Profile"
+  },
+  "featured": {
+    "label": "Featured",
+    "price": "Price",
+    "volume": "Volume",
+    "cta": "Discover"
+  },
+  "testimonials": {
+    "label": "Press & Praise",
+    "title": "Voices"
+  },
+  "about": {
+    "heroLabel": "Our Story",
+    "heroTitle": "The Art of Scent",
+    "heroSub": "Since 1987, we have pursued the impossible — to bottle emotion itself.",
+    "cta": "Book Consultation",
+    "visitUs": "Visit Us",
+    "atelierTitle": "The Atelier Awaits"
+  },
+  "product": {
+    "topNotes": "Top Notes",
+    "heartNotes": "Heart Notes",
+    "baseNotes": "Base Notes",
+    "addCollection": "Add to Collection",
+    "olfactoryPyramid": "Olfactory Pyramid",
+    "fragranceNotes": "Fragrance Notes",
+    "rawMaterials": "Raw Materials",
+    "ingredientOrigins": "Ingredient Origins",
+    "madeByHand": "Made by Hand",
+    "craftedDevotion": "Crafted with Devotion",
+    "craftDesc": "Every bottle is hand-assembled in our Grasse atelier by master craftspeople with decades of experience.",
+    "watchFilm": "Watch the Film",
+    "notFound": "Fragrance Not Found",
+    "returnCollection": "Return to Collection"
+  },
+  "collectionPage": {
+    "allFragrances": "All Fragrances"
+  },
+  "contact": {
+    "label": "Get in Touch",
+    "title": "Contact",
+    "subtitle": "We welcome you to experience Maison in person. Private consultations are available by appointment.",
+    "name": "Name",
+    "namePlaceholder": "Your full name",
+    "email": "Email",
+    "emailPlaceholder": "your@email.com",
+    "subject": "Subject",
+    "subjectPlaceholder": "Select an inquiry type",
+    "optConsultation": "Private Consultation",
+    "optBespoke": "Bespoke Fragrance",
+    "optGift": "Gift Service",
+    "optPress": "Press Inquiry",
+    "optOther": "Other",
+    "message": "Message",
+    "messagePlaceholder": "Tell us how we can assist you...",
+    "send": "Send Message",
+    "visitTitle": "Visit the Atelier",
+    "address1": "24 Rue de la Parfumerie",
+    "address2": "06130 Grasse, France",
+    "hoursTitle": "Hours",
+    "hoursWeekday": "Monday – Friday: 10:00 – 18:00",
+    "hoursWeekend": "Saturday: By appointment only",
+    "reachTitle": "Reach Us",
+    "phone": "+33 4 93 36 44 00",
+    "emailAddress": "atelier@maison.com"
+  },
+  "footer": {
+    "desc": "The art of scent, elevated to an unforgettable experience. Crafted for those who collect memories, not fragrances.",
+    "maison": "Maison",
+    "collection": "Collection",
+    "experience": "Experience",
+    "ourStory": "Our Story",
+    "theAtelier": "The Atelier",
+    "sustainability": "Sustainability",
+    "allFragrances": "All Fragrances",
+    "oudCollection": "Oud Collection",
+    "limitedEdition": "Limited Edition",
+    "privateConsultation": "Private Consultation",
+    "giftService": "Gift Service",
+    "bespokeFragrance": "Bespoke Fragrance",
+    "rights": "All rights reserved."
+  }
+}
