@@ -11,7 +11,7 @@ export default function Footer() {
       title: t("footer.maison"),
       links: [
         { label: t("footer.ourStory"), path: "/about" },
-        { label: t("footer.theAtelier"), path: "/about" },
+        { label: t("nav.rituals"), path: "/rituals" },
         { label: t("footer.sustainability"), path: "/about" },
       ],
     },

@@ -62,12 +62,12 @@ export default function SignatureExperience() {
             className="aspect-[3/4] bg-cover bg-center"
             style={{
               backgroundColor: "var(--color-accent)",
-              backgroundImage: "url(https://images.unsplash.com/photo-1595425959229-4c61df688cde?w=1200&h=1600&fit=crop&q=80)",
+              backgroundImage: "url(/images/img2.jpg)",
             }}
           />
           <div
             className="absolute inset-0 flex items-center justify-center"
-            style={{ backgroundColor: "rgba(168,161,147,0.3)" }}
+            style={{ backgroundColor: "rgba(196,168,130,0.3)" }}
           >
             <div
               className="w-20 h-20 rounded-full flex items-center justify-center glass-panel cursor-pointer hover:scale-110 transition-transform duration-300"

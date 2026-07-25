@@ -79,7 +79,7 @@ export default function LuxuryIngredients() {
               className="absolute inset-0"
               style={{
                 backgroundColor: "var(--color-accent)",
-                backgroundImage: "url(https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=1200&h=800&fit=crop&q=80)",
+                backgroundImage: "url(/images/img4.jpg)",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 opacity: 0.3,

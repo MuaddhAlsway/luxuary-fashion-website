@@ -12,7 +12,7 @@ const sections = [
     subtitle: "A Legacy Born in Grasse",
     description:
       "In 1987, master perfumer Étienne Delacroix left the dominant fragrance houses of Paris to establish something radical: a maison dedicated not to trends, but to truth. In the ancient perfume capital of Grasse, surrounded by jasmine fields and rose gardens, Maison was born from a singular conviction — that fragrance is the most intimate form of art.",
-    image: "https://images.unsplash.com/photo-1541643600914-78b084683601?w=800&h=1000&fit=crop&q=80",
+    image: "/images/img2.jpg",
   },
   {
     label: "02",
@@ -20,7 +20,7 @@ const sections = [
     subtitle: "Scent as Self-Expression",
     description:
       "We believe a fragrance should reveal, not conceal. Each composition is designed to amplify the wearer's unique character — not to mask it. We do not create fragrances for the masses. We create them for the individual — for those who understand that true luxury is personal.",
-    image: "https://images.unsplash.com/photo-1595425959229-4c61df688cde?w=800&h=1000&fit=crop&q=80",
+    image: "/images/img3.jpg",
   },
   {
     label: "03",
@@ -28,7 +28,7 @@ const sections = [
     subtitle: "Three Decades of Mastery",
     description:
       "Our atelier remains in the same stone building where it was founded. Within these walls, six master perfumers continue traditions passed down through centuries. Each composition is blended by hand, tested across months, and refined until it achieves what Étienne called 'olfactory truth' — a scent that resonates on a molecular and emotional level.",
-    image: "https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?w=800&h=1000&fit=crop&q=80",
+    image: "/images/img4.jpg",
   },
   {
     label: "04",
@@ -36,7 +36,7 @@ const sections = [
     subtitle: "Étienne Delacroix",
     description:
       "With a vocabulary of over 3,000 raw materials committed to memory, Étienne is one of fewer than fifty living perfumers recognized as a Maître Parfumeur. His compositions are characterized by an architectural precision — each note placed with the deliberation of a master builder, each accord balanced with mathematical grace.",
-    image: "https://images.unsplash.com/photo-1594035910387-fa0e7426a2af?w=800&h=1000&fit=crop&q=80",
+    image: "/images/img5.jpg",
   },
   {
     label: "05",
@@ -44,7 +44,7 @@ const sections = [
     subtitle: "Responsibility as Luxury",
     description:
       "True luxury cannot exist without responsibility. We source ingredients through direct partnerships with farmers, ensuring fair wages and sustainable harvesting. Our bottles are crafted from recycled Murano glass. Our packaging uses zero plastic. Every choice we make considers the world we leave behind.",
-    image: "https://images.unsplash.com/photo-1563170351-be82bc888aa4?w=800&h=1000&fit=crop&q=80",
+    image: "/images/img1.jpg",
   },
   {
     label: "06",
@@ -52,7 +52,7 @@ const sections = [
     subtitle: "The Next Chapter",
     description:
       "As we approach our fourth decade, we are pioneering new frontiers in sustainable luxury — bio-synthesized rare ingredients, carbon-neutral production, and a commitment to ensuring that the art of perfumery thrives for generations to come.",
-    image: "https://images.unsplash.com/photo-1587017539504-67cfbddac569?w=800&h=1000&fit=crop&q=80",
+    image: "/images/img2.jpg",
   },
 ];
 
@@ -120,14 +120,14 @@ export default function AboutPage() {
           className="absolute inset-0"
           style={{
             backgroundColor: "var(--color-secondary)",
-            backgroundImage: "url(https://images.unsplash.com/photo-1595425959229-4c61df688cde?w=1920&h=1080&fit=crop&q=80)",
+            backgroundImage: "url(/images/img1.jpg)",
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
         />
         <div
           className="absolute inset-0"
-          style={{ backgroundColor: "rgba(168,161,147,0.5)" }}
+          style={{ backgroundColor: "rgba(196,168,130,0.5)" }}
         />
         <div className="relative z-10 text-center px-6">
           <p

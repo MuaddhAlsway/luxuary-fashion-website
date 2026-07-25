@@ -4,6 +4,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { products } from "../../data/products";
 import { Link } from "react-router-dom";
 import { useLocale } from "../../hooks/useLocale";
+import ImageReveal from "../ui/ImageReveal";
+import TiltCard from "../ui/TiltCard";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -93,27 +95,31 @@ export default function ShowoffCollection() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
           {/* Large Featured Card */}
           <div className="collection-card md:col-span-7 relative group overflow-hidden rounded-sm cursor-pointer">
-            <Link to={localizePath(`/product/${featured[0]?.id}`)}>
-              <div
-                className="aspect-[3/4] md:aspect-[4/5] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                style={{
-                  backgroundColor: "var(--color-accent)",
-                  backgroundImage: `url(${featured[0]?.image})`,
-                }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="absolute bottom-0 left-0 right-0 p-8 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
-                <p className="text-label text-secondary mb-2 tracking-[0.3em]">
-                  {featured[0]?.category[0].toUpperCase()}
-                </p>
-                <h3 className="heading-display text-3xl text-secondary mb-2">
-                  {featured[0]?.name}
-                </h3>
-                <p className="text-body-elegant text-sm text-secondary/80">
-                  {featured[0]?.subtitle}
-                </p>
-              </div>
-            </Link>
+            <TiltCard intensity={6}>
+              <Link to={localizePath(`/product/${featured[0]?.id}`)}>
+                <ImageReveal direction="left">
+                  <div
+                    className="aspect-[3/4] md:aspect-[4/5] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                    style={{
+                      backgroundColor: "var(--color-accent)",
+                      backgroundImage: `url(${featured[0]?.image})`,
+                    }}
+                  />
+                </ImageReveal>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute bottom-0 left-0 right-0 p-8 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                  <p className="text-label text-secondary mb-2 tracking-[0.3em]">
+                    {featured[0]?.category[0].toUpperCase()}
+                  </p>
+                  <h3 className="heading-display text-3xl text-secondary mb-2">
+                    {featured[0]?.name}
+                  </h3>
+                  <p className="text-body-elegant text-sm text-secondary/80">
+                    {featured[0]?.subtitle}
+                  </p>
+                </div>
+              </Link>
+            </TiltCard>
           </div>
 
           {/* Stack of Two Medium Cards */}
@@ -123,24 +129,28 @@ export default function ShowoffCollection() {
                 key={product.id}
                 className="collection-card relative group overflow-hidden rounded-sm cursor-pointer"
               >
-                <Link to={localizePath(`/product/${product.id}`)}>
-                  <div
-                    className="aspect-[16/10] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                    style={{
-                      backgroundColor: "var(--color-accent)",
-                      backgroundImage: `url(${product.image})`,
-                    }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
-                    <p className="text-label text-secondary mb-1 tracking-[0.3em]">
-                      {product.category[0].toUpperCase()}
-                    </p>
-                    <h3 className="heading-display text-2xl text-secondary">
-                      {product.name}
-                    </h3>
-                  </div>
-                </Link>
+                <TiltCard intensity={6}>
+                  <Link to={localizePath(`/product/${product.id}`)}>
+                    <ImageReveal direction="up">
+                      <div
+                        className="aspect-[16/10] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                        style={{
+                          backgroundColor: "var(--color-accent)",
+                          backgroundImage: `url(${product.image})`,
+                        }}
+                      />
+                    </ImageReveal>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                      <p className="text-label text-secondary mb-1 tracking-[0.3em]">
+                        {product.category[0].toUpperCase()}
+                      </p>
+                      <h3 className="heading-display text-2xl text-secondary">
+                        {product.name}
+                      </h3>
+                    </div>
+                  </Link>
+                </TiltCard>
               </div>
             ))}
           </div>

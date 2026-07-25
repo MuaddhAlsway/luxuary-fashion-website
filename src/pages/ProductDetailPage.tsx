@@ -1,105 +1,19 @@
-import { useEffect, useRef, Suspense } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, Environment, Float } from "@react-three/drei";
 import { products } from "../data/products";
 import MagneticButton from "../components/ui/MagneticButton";
 import { useLocale } from "../hooks/useLocale";
 
 gsap.registerPlugin(ScrollTrigger);
 
-function BottleModel() {
-  const meshRef = useRef<any>(null);
-
-  useFrame((state) => {
-    if (meshRef.current) {
-      meshRef.current.rotation.y = state.clock.elapsedTime * 0.4;
-      meshRef.current.position.y =
-        Math.sin(state.clock.elapsedTime * 0.6) * 0.1;
-    }
-  });
-
-  return (
-    <Float speed={1.2} rotationIntensity={0.15} floatIntensity={0.2}>
-      <group ref={meshRef}>
-        <mesh position={[0, 0, 0]}>
-          <cylinderGeometry args={[0.6, 0.7, 2.2, 32]} />
-          <meshPhysicalMaterial
-            color="#D8C8B6"
-            metalness={0.1}
-            roughness={0.1}
-            transmission={0.6}
-            thickness={0.5}
-            ior={1.5}
-            clearcoat={1}
-            clearcoatRoughness={0.1}
-          />
-        </mesh>
-        <mesh position={[0, 1.4, 0]}>
-          <cylinderGeometry args={[0.15, 0.25, 0.6, 32]} />
-          <meshPhysicalMaterial
-            color="#D8C8B6"
-            metalness={0.1}
-            roughness={0.1}
-            transmission={0.6}
-            thickness={0.3}
-            ior={1.5}
-            clearcoat={1}
-          />
-        </mesh>
-        <mesh position={[0, 1.9, 0]}>
-          <cylinderGeometry args={[0.2, 0.18, 0.4, 32]} />
-          <meshStandardMaterial
-            color="#6D0F1A"
-            metalness={0.4}
-            roughness={0.3}
-          />
-        </mesh>
-        <mesh position={[0, -0.2, 0]}>
-          <cylinderGeometry args={[0.55, 0.65, 1.6, 32]} />
-          <meshPhysicalMaterial
-            color="#6D0F1A"
-            metalness={0}
-            roughness={0}
-            transmission={0.8}
-            thickness={1}
-            ior={1.33}
-            opacity={0.4}
-            transparent
-          />
-        </mesh>
-      </group>
-    </Float>
-  );
-}
-
-function Scene() {
-  return (
-    <>
-      <ambientLight intensity={0.5} />
-      <directionalLight position={[5, 5, 5]} intensity={1} />
-      <directionalLight position={[-5, 3, -5]} intensity={0.3} />
-      <BottleModel />
-      <OrbitControls
-        enableZoom={false}
-        enablePan={false}
-        autoRotate
-        autoRotateSpeed={0.5}
-        minPolarAngle={Math.PI / 3}
-        maxPolarAngle={Math.PI / 2}
-      />
-      <Environment preset="studio" />
-    </>
-  );
-}
-
 export default function ProductDetailPage() {
   const { id } = useParams();
   const product = products.find((p) => p.id === id);
   const pageRef = useRef<HTMLDivElement>(null);
   const { localizePath } = useLocale();
+  const [showSticky, setShowSticky] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -111,6 +25,17 @@ export default function ProductDetailPage() {
         ".pd-hero-content",
         { y: 60, opacity: 0 },
         { y: 0, opacity: 1, duration: 1, ease: "power3.out", delay: 0.3 }
+      );
+
+      gsap.fromTo(
+        ".pd-hero-image",
+        { clipPath: "inset(0 100% 0 0)" },
+        {
+          clipPath: "inset(0 0% 0 0)",
+          duration: 1.5,
+          ease: "power4.inOut",
+          delay: 0.2,
+        }
       );
 
       gsap.utils.toArray(".pd-section").forEach((section: any) => {
@@ -129,6 +54,13 @@ export default function ProductDetailPage() {
             },
           }
         );
+      });
+
+      ScrollTrigger.create({
+        trigger: ".pd-hero-content",
+        start: "bottom top",
+        onEnterBack: () => setShowSticky(false),
+        onLeave: () => setShowSticky(true),
       });
     }, pageRef);
 
@@ -162,29 +94,29 @@ export default function ProductDetailPage() {
 
   return (
     <main ref={pageRef}>
-      {/* Hero - Fullscreen Bottle */}
+      {/* Hero - Product Image + Info */}
       <section className="relative min-h-screen flex items-center">
         <div className="grid grid-cols-1 md:grid-cols-2 w-full">
-          {/* 3D Bottle */}
-          <div className="h-[50vh] md:h-screen order-2 md:order-1 relative">
-            <Suspense
-              fallback={
-                <div className="w-full h-full flex items-center justify-center">
-                  <div className="w-8 h-8 border border-current rounded-full animate-spin" />
-                </div>
-              }
-            >
-              <Canvas
-                camera={{ position: [0, 0, 5], fov: 45 }}
-                style={{ background: "transparent" }}
-              >
-                <Scene />
-              </Canvas>
-            </Suspense>
+          {/* Product Image */}
+          <div className="h-[50vh] md:h-screen order-2 md:order-1 relative overflow-hidden">
+            <div
+              className="pd-hero-image absolute inset-0 bg-cover bg-center"
+              style={{
+                backgroundColor: "var(--color-accent)",
+                backgroundImage: `url(${product.image})`,
+              }}
+            />
+            <div
+              className="absolute inset-0"
+              style={{
+                background:
+                  "linear-gradient(135deg, transparent 60%, rgba(196,168,130,0.3) 100%)",
+              }}
+            />
           </div>
 
           {/* Product Info */}
-          <div className="pd-hero-content flex flex-col justify-center px-6 md:px-16 lg:px-24 py-16 order-1 md:order-2">
+          <div className="pd-hero-content flex flex-col justify-center px-6 md:px-16 lg:px-24 py-16 order-1 md:order-2" style={{ backgroundColor: "var(--color-deep)" }}>
             <p
               className="text-label mb-4 tracking-[0.3em]"
               style={{ color: "var(--color-muted)" }}
@@ -193,7 +125,7 @@ export default function ProductDetailPage() {
             </p>
             <h1
               className="heading-display text-6xl md:text-8xl mb-2"
-              style={{ color: "var(--color-text)" }}
+              style={{ color: "var(--color-secondary)" }}
             >
               {product.name}
             </h1>
@@ -205,7 +137,7 @@ export default function ProductDetailPage() {
             </p>
             <p
               className="text-body-elegant text-lg mb-10 max-w-md"
-              style={{ color: "var(--color-text)", opacity: 0.7 }}
+              style={{ color: "var(--color-muted)" }}
             >
               {product.description}
             </p>
@@ -220,14 +152,14 @@ export default function ProductDetailPage() {
                 </p>
                 <p
                   className="heading-editorial text-3xl"
-                  style={{ color: "var(--color-text)" }}
+                  style={{ color: "var(--color-secondary)" }}
                 >
                   ${product.price.toLocaleString()}
                 </p>
               </div>
               <div
                 className="w-px h-10"
-                style={{ backgroundColor: "var(--color-text)", opacity: 0.2 }}
+                style={{ backgroundColor: "var(--color-muted)", opacity: 0.3 }}
               />
               <div>
                 <p
@@ -238,7 +170,7 @@ export default function ProductDetailPage() {
                 </p>
                 <p
                   className="heading-editorial text-3xl"
-                  style={{ color: "var(--color-text)" }}
+                  style={{ color: "var(--color-secondary)" }}
                 >
                   {product.size}
                 </p>
@@ -371,7 +303,10 @@ export default function ProductDetailPage() {
                   className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center"
                   style={{ backgroundColor: "var(--color-accent)" }}
                 >
-                  <span className="heading-editorial text-lg" style={{ color: "var(--color-text)" }}>
+                  <span
+                    className="heading-editorial text-lg"
+                    style={{ color: "var(--color-text)" }}
+                  >
                     {ingredient[0]}
                   </span>
                 </div>
@@ -381,10 +316,7 @@ export default function ProductDetailPage() {
                 >
                   {ingredient}
                 </h3>
-                <p
-                  className="text-sm"
-                  style={{ color: "var(--color-muted)" }}
-                >
+                <p className="text-sm" style={{ color: "var(--color-muted)" }}>
                   Sourced with care
                 </p>
               </div>
@@ -399,12 +331,12 @@ export default function ProductDetailPage() {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundColor: "var(--color-deep)",
-            backgroundImage: "url(https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=1920&h=1080&fit=crop&q=80)",
+            backgroundImage: "url(/images/img3.jpg)",
           }}
         />
         <div
           className="absolute inset-0"
-          style={{ backgroundColor: "rgba(61,8,16,0.7)" }}
+          style={{ backgroundColor: "rgba(26,26,26,0.7)" }}
         />
         <div className="relative z-10 text-center px-6">
           <p
@@ -432,6 +364,77 @@ export default function ProductDetailPage() {
         </div>
       </section>
 
+      {/* Layering Guide */}
+      <section
+        className="pd-section section-padding"
+        style={{ backgroundColor: "var(--color-bg)" }}
+      >
+        <div className="max-w-[1000px] mx-auto text-center">
+          <p
+            className="text-label mb-4 tracking-[0.3em]"
+            style={{ color: "var(--color-muted)" }}
+          >
+            Layering Guide
+          </p>
+          <h2
+            className="heading-display text-4xl md:text-6xl mb-6"
+            style={{ color: "var(--color-text)" }}
+          >
+            Build Your Signature
+          </h2>
+          <p
+            className="text-body-elegant text-lg max-w-2xl mx-auto mb-16"
+            style={{ color: "var(--color-text)", opacity: 0.7 }}
+          >
+            Layer fragrances to create a scent that is uniquely yours. Start
+            with a lighter base, then add depth with complementary compositions.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {products
+              .filter(
+                (p) =>
+                  p.id !== product.id &&
+                  p.category.some((c) => product.category.includes(c))
+              )
+              .slice(0, 3)
+              .map((pair) => (
+                <Link
+                  key={pair.id}
+                  to={localizePath(`/product/${pair.id}`)}
+                  className="group"
+                >
+                  <div
+                    className="aspect-[3/4] bg-cover bg-center rounded-sm mb-4 transition-transform duration-500 group-hover:scale-105"
+                    style={{
+                      backgroundColor: "var(--color-accent)",
+                      backgroundImage: `url(${pair.image})`,
+                    }}
+                  />
+                  <p
+                    className="text-label mb-1 tracking-[0.2em]"
+                    style={{ color: "var(--color-muted)" }}
+                  >
+                    Layer with
+                  </p>
+                  <h3
+                    className="heading-editorial text-xl"
+                    style={{ color: "var(--color-text)" }}
+                  >
+                    {pair.name}
+                  </h3>
+                  <p
+                    className="text-sm"
+                    style={{ color: "var(--color-text)", opacity: 0.6 }}
+                  >
+                    {pair.subtitle}
+                  </p>
+                </Link>
+              ))}
+          </div>
+        </div>
+      </section>
+
       {/* Purchase Sticky Section */}
       <section
         className="pd-section section-padding"
@@ -455,6 +458,51 @@ export default function ProductDetailPage() {
           <MagneticButton>Add to Collection</MagneticButton>
         </div>
       </section>
+
+      {/* Sticky Add to Cart Bar */}
+      <div
+        className="fixed top-0 left-0 right-0 z-[150] transition-all duration-500"
+        style={{
+          transform: showSticky ? "translateY(0)" : "translateY(-100%)",
+          backgroundColor: "#1A1A1A",
+          borderBottom: "1px solid rgba(196,168,130,0.2)",
+        }}
+      >
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12 py-3 flex items-center justify-between">
+          <div className="flex items-center gap-6">
+            <div
+              className="w-10 h-10 bg-cover bg-center rounded-sm"
+              style={{
+                backgroundColor: "var(--color-accent)",
+                backgroundImage: `url(${product.image})`,
+              }}
+            />
+            <div>
+              <h4
+                className="heading-editorial text-lg"
+                style={{ color: "var(--color-secondary)" }}
+              >
+                {product.name}
+              </h4>
+              <p
+                className="text-label tracking-[0.15em]"
+                style={{ color: "#C4A882" }}
+              >
+                ${product.price.toLocaleString()}
+              </p>
+            </div>
+          </div>
+          <button
+            className="px-6 py-2.5 text-label tracking-[0.15em] transition-all duration-300 hover:opacity-80"
+            style={{
+              border: "1px solid #C4A882",
+              color: "#C4A882",
+            }}
+          >
+            Add to Collection
+          </button>
+        </div>
+      </div>
     </main>
   );
 }

@@ -87,7 +87,7 @@ export default function HeroSection() {
           playsInline
           preload="auto"
           className="w-full h-full object-cover"
-          poster="https://images.unsplash.com/photo-1523293182086-7651a899d37f?w=1920&h=1080&fit=crop&q=80"
+          poster="/images/img1.jpg"
         >
           <source src="/video/hero.mp4" type="video/mp4" />
         </video>
@@ -95,7 +95,19 @@ export default function HeroSection() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(180deg, rgba(168,161,147,0.3) 0%, rgba(168,161,147,0.6) 50%, rgba(168,161,147,0.85) 100%)",
+              "linear-gradient(180deg, rgba(26,26,26,0.3) 0%, rgba(26,26,26,0.5) 50%, rgba(26,26,26,0.8) 100%)",
+          }}
+        />
+      </div>
+
+      {/* Film Grain Overlay */}
+      <div className="absolute inset-0 pointer-events-none z-[1] opacity-[0.04]">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
+            backgroundRepeat: "repeat",
+            animation: "grain 0.5s steps(1) infinite",
           }}
         />
       </div>
@@ -124,7 +136,7 @@ export default function HeroSection() {
       <div className="relative z-10 h-full flex flex-col items-center justify-center px-6 text-center">
         <p
           className="hero-label text-label mb-8 tracking-[0.4em]"
-          style={{ color: "var(--color-text)" }}
+          style={{ color: "#C4A882" }}
         >
           Established in Grasse, 1987
         </p>
@@ -135,7 +147,7 @@ export default function HeroSection() {
               <span
                 key={i}
                 className="hero-title-word heading-display text-5xl sm:text-7xl md:text-8xl lg:text-9xl"
-                style={{ color: "var(--color-text)" }}
+                style={{ color: "#C4A882" }}
               >
                 {word}
               </span>
@@ -145,13 +157,13 @@ export default function HeroSection() {
 
         <p
           className="hero-subtitle text-body-elegant text-lg md:text-xl max-w-xl mb-12"
-          style={{ color: "var(--color-text)", opacity: 0.8 }}
+          style={{ color: "#C4A882" }}
         >
           Crafted for those who collect memories, not fragrances.
         </p>
 
         <div className="hero-cta">
-          <MagneticButton>Discover Collection</MagneticButton>
+          <MagneticButton className="hero-btn">Discover Collection</MagneticButton>
         </div>
       </div>
 
@@ -178,6 +190,28 @@ export default function HeroSection() {
       </div>
 
       <style>{`
+        .hero-btn {
+          border-color: #C4A882;
+          color: #C4A882;
+        }
+        .hero-btn::before {
+          background: #C4A882;
+        }
+        .hero-btn:hover {
+          color: #1A1A1A;
+        }
+        @keyframes grain {
+          0%, 100% { transform: translate(0, 0); }
+          10% { transform: translate(-2%, -2%); }
+          20% { transform: translate(2%, 2%); }
+          30% { transform: translate(-1%, 3%); }
+          40% { transform: translate(3%, -1%); }
+          50% { transform: translate(-3%, 1%); }
+          60% { transform: translate(1%, -3%); }
+          70% { transform: translate(-2%, 2%); }
+          80% { transform: translate(2%, -2%); }
+          90% { transform: translate(-1%, 1%); }
+        }
         @keyframes float {
           0%, 100% { transform: translateY(0) translateX(0); }
           33% { transform: translateY(-20px) translateX(10px); }

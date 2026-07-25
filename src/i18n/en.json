@@ -2,6 +2,7 @@
   "nav": {
     "collection": "Collection",
     "about": "About",
+    "rituals": "Rituals",
     "atelier": "Atelier",
     "contact": "Contact"
   },
@@ -14,6 +15,15 @@
     "subtitle": "Crafted for those who collect memories, not fragrances.",
     "cta": "Discover Collection",
     "scroll": "Scroll"
+  },
+  "quiz": {
+    "label": "Scent Discovery",
+    "q1": "What mood do you gravitate toward?",
+    "q2": "Which season feels like you?",
+    "q3": "Your ideal evening?",
+    "result": "Your Signature Fragrance",
+    "discover": "Discover",
+    "retake": "Retake Quiz"
   },
   "collection": {
     "label": "The Collection",
@@ -43,6 +53,14 @@
     "label": "Press & Praise",
     "title": "Voices"
   },
+  "newsletter": {
+    "label": "The Inner Circle",
+    "title": "Join Our World",
+    "desc": "Be the first to discover new compositions, limited editions, and exclusive invitations to private events.",
+    "placeholder": "your@email.com",
+    "cta": "Subscribe",
+    "thanks": "Welcome to the Inner Circle."
+  },
   "about": {
     "heroLabel": "Our Story",
     "heroTitle": "The Art of Scent",
@@ -50,6 +68,13 @@
     "cta": "Book Consultation",
     "visitUs": "Visit Us",
     "atelierTitle": "The Atelier Awaits"
+  },
+  "rituals": {
+    "heroLabel": "The Art of Wearing",
+    "heroTitle": "Rituals",
+    "heroSub": "A fragrance is only as powerful as the ritual that delivers it. Master the art of application.",
+    "timelineLabel": "The Journey of Scent",
+    "timelineTitle": "How Fragrance Evolves"
   },
   "product": {
     "topNotes": "Top Notes",
@@ -64,6 +89,10 @@
     "craftedDevotion": "Crafted with Devotion",
     "craftDesc": "Every bottle is hand-assembled in our Grasse atelier by master craftspeople with decades of experience.",
     "watchFilm": "Watch the Film",
+    "layeringGuide": "Layering Guide",
+    "buildSignature": "Build Your Signature",
+    "layeringDesc": "Layer fragrances to create a scent that is uniquely yours.",
+    "layerWith": "Layer with",
     "notFound": "Fragrance Not Found",
     "returnCollection": "Return to Collection"
   },

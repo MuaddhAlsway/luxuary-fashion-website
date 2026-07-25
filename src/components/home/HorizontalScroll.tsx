@@ -103,7 +103,7 @@ export default function HorizontalScroll() {
                 <div
                   className="absolute inset-0"
                   style={{
-                    background: `linear-gradient(135deg, transparent 50%, rgba(168,161,147,0.4) 100%)`,
+                    background: `linear-gradient(135deg, transparent 50%, rgba(196,168,130,0.4) 100%)`,
                   }}
                 />
               </div>

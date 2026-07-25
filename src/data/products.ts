@@ -32,7 +32,7 @@ export const products: Product[] = [
       base: ["Sandalwood", "Amber", "Musk"],
     },
     ingredients: ["Oud", "Rose", "Saffron", "Amber"],
-    image: "https://images.unsplash.com/photo-1541643600914-78b084683601?w=800&h=1000&fit=crop&q=80",
+    image: "/images/img1.jpg",
     featured: true,
   },
   {
@@ -50,7 +50,7 @@ export const products: Product[] = [
       base: ["Amber", "White Musk", "Cedarwood"],
     },
     ingredients: ["Neroli", "Jasmine", "Amber", "Musk"],
-    image: "https://images.unsplash.com/photo-1594035910387-fa0e7426a2af?w=800&h=1000&fit=crop&q=80",
+    image: "/images/img2.jpg",
     featured: true,
   },
   {
@@ -68,7 +68,7 @@ export const products: Product[] = [
       base: ["Leather", "Cedarwood", "Benzoin"],
     },
     ingredients: ["Vetiver", "Patchouli", "Leather", "Cedar"],
-    image: "https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?w=800&h=1000&fit=crop&q=80",
+    image: "/images/img3.jpg",
     featured: true,
   },
   {
@@ -86,7 +86,7 @@ export const products: Product[] = [
       base: ["Musk", "Cashmeran", "Ambroxan"],
     },
     ingredients: ["Tuberose", "Peony", "Musk", "Ambroxan"],
-    image: "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=800&h=1000&fit=crop&q=80",
+    image: "/images/img4.jpg",
     featured: false,
   },
   {
@@ -104,7 +104,7 @@ export const products: Product[] = [
       base: ["Vanilla", "Tonka Bean", "Amber"],
     },
     ingredients: ["Amber", "Labdanum", "Vanilla", "Benzoin"],
-    image: "https://images.unsplash.com/photo-1595425959229-4c61df688cde?w=800&h=1000&fit=crop&q=80",
+    image: "/images/img5.jpg",
     featured: false,
   },
   {
@@ -122,7 +122,7 @@ export const products: Product[] = [
       base: ["Leather", "Amber", "Sandalwood"],
     },
     ingredients: ["Rose", "Oud", "Saffron", "Leather"],
-    image: "https://images.unsplash.com/photo-1587017539504-67cfbddac569?w=800&h=1000&fit=crop&q=80",
+    image: "/images/img1.jpg",
     featured: true,
   },
 ];
