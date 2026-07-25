@@ -6,7 +6,6 @@ import { useLocale } from "../../hooks/useLocale";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const { t } = useTranslation();
   const { localizePath } = useLocale();
@@ -16,14 +15,6 @@ export default function Navbar() {
     { label: t("nav.about"), path: "/about" },
     { label: t("nav.contact"), path: "/contact" },
   ];
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 100);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   useEffect(() => {
     setIsOpen(false);
@@ -49,9 +40,8 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 w-full z-[100] transition-all duration-700 ${
-          scrolled ? "glass-panel py-4" : "bg-transparent py-6"
-        }`}
+        className={`fixed top-0 left-0 w-full z-[100] transition-all duration-700 py-4`}
+        style={{ backgroundColor: "var(--color-bg)" }}
       >
         <div className="flex items-center justify-between px-6 md:px-12">
           <Link to={localizePath("/")} className="relative z-[101]">

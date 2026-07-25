@@ -10,7 +10,7 @@ export default function HeroSection() {
     if (!sectionRef.current) return;
 
     const ctx = gsap.context(() => {
-      const tl = gsap.timeline({ delay: 2.5 });
+      const tl = gsap.timeline({ delay: 0.5 });
 
       tl.fromTo(
         ".hero-label",
@@ -85,10 +85,11 @@ export default function HeroSection() {
           muted
           loop
           playsInline
+          preload="auto"
           className="w-full h-full object-cover"
           poster="https://images.unsplash.com/photo-1523293182086-7651a899d37f?w=1920&h=1080&fit=crop&q=80"
         >
-          <source src="https://cdn.pixabay.com/video/2025/02/12/257927_large.mp4" type="video/mp4" />
+          <source src="/video/hero.mp4" type="video/mp4" />
         </video>
         <div
           className="absolute inset-0"
