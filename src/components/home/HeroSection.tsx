@@ -88,6 +88,11 @@ export default function HeroSection() {
           preload="auto"
           className="w-full h-full object-cover"
           poster="/images/img1.jpg"
+          ref={(el) => {
+            if (el) {
+              el.play().catch(() => {});
+            }
+          }}
         >
           <source src="/video/hero.mp4" type="video/mp4" />
         </video>
